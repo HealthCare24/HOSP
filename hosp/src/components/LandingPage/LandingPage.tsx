@@ -5,7 +5,7 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/componen
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Facebook, Github, Linkedin, Youtube } from 'lucide-react'
 
-export default function Page() {
+export default function LandingPage() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Header */}
