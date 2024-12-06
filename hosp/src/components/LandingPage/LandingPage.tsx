@@ -113,7 +113,7 @@ export default function LandingPage() {
               <h3 className="mb-4 text-sm font-semibold">Resources</h3>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li>Blog</li>
-                <li>Best practices</li>
+                <li>Worst practices</li>
                 <li>Others</li>
                 <li>Color wheel</li>
                 <li>Support</li>
