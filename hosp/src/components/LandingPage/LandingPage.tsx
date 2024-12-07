@@ -1,14 +1,15 @@
-"use client"
-
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Facebook, Github, Linkedin, Youtube } from 'lucide-react'
+'use client'
+import { Facebook, Github, Linkedin, Youtube } from "lucide-react";
+import Link from "next/link";
+import PricingSection from "./PricingSection";
+import HeroSection from "./HeroSection";
+import { Button } from "../ui/button";
 
 export default function LandingPage() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      {/* Header */}
+
+      {/* Header
       <header className="border-b">
         <nav className="container mx-auto flex h-16 items-center px-4">
           <div className="flex items-center space-x-6">
@@ -16,138 +17,113 @@ export default function LandingPage() {
               <div className="size-4 rounded-sm border-2" />
             </div>
             <div className="hidden items-center space-x-6 md:flex">
-              <a href="#" className="text-sm font-medium">Products</a>
-              <a href="#" className="text-sm font-medium">Solutions</a>
-              <a href="#" className="text-sm font-medium">Community</a>
-              <a href="#" className="text-sm font-medium">Resources</a>
-              <a href="#" className="text-sm font-medium">Pricing</a>
-              <a href="#" className="text-sm font-medium">Contact</a>
+              <Link href="#" passHref>
+                <a className="text-sm font-medium">Products</a>
+              </Link>
+              <Link href="#" passHref>
+                <a className="text-sm font-medium">Solutions</a>
+              </Link>
+              <Link href="#" passHref>
+                <a className="text-sm font-medium">Community</a>
+              </Link>
+              <Link href="#" passHref>
+                <a className="text-sm font-medium">Resources</a>
+              </Link>
+              <Link href="#" passHref>
+                <a className="text-sm font-medium">Pricing</a>
+              </Link>
+              <Link href="#" passHref>
+                <a className="text-sm font-medium">Contact</a>
+              </Link>
             </div>
           </div>
           <div className="ml-auto flex items-center space-x-4">
-            <Button variant="ghost" className="text-sm">Sign in</Button>
+            <Button variant="ghost" className="text-sm">
+              Sign in
+            </Button>
             <Button className="text-sm">Register</Button>
           </div>
         </nav>
-      </header>
+      </header> */}
 
       {/* Hero Section */}
-      <section className="container mx-auto px-4 py-24">
-        <div className="grid gap-6 lg:grid-cols-2">
-          <div className="space-y-4">
-            <h1 className="text-4xl font-bold">Heading</h1>
-            <p className="text-lg text-muted-foreground">Subheading</p>
-            <p className="text-muted-foreground">
-              Body text for your article or post. We'll put in some lorem ipsum to show how a filled-out page might look.
-            </p>
-            <p className="text-muted-foreground">
-              Excepteur efficitur emerging, lorem veniam ante aute carefully curated UI/UX consectetur faucibus perfect nostrud elit adipisicing, esse elit non-contextual text-centric odio ut. Proactively adipisicing, eleifend lovely ipsum tempor exerci irure.
-            </p>
-          </div>
-          <div className="aspect-video bg-muted" />
-        </div>
+      <section id="hero" className="container mx-auto px-4 py-24">
+        <HeroSection />
       </section>
 
       {/* Pricing Section */}
-      <section className="container mx-auto px-4 py-24">
-        <Tabs defaultValue="monthly" className="mx-auto mb-12 w-fit">
-          <TabsList>
-            <TabsTrigger value="monthly">Monthly</TabsTrigger>
-            <TabsTrigger value="yearly">Yearly</TabsTrigger>
-          </TabsList>
-        </Tabs>
-        <div className="grid gap-6 md:grid-cols-3">
-          {Array.from({ length: 3 }).map((_, i) => (
-            <Card key={i} className="relative overflow-hidden">
-              <CardHeader>
-                <CardTitle>Title</CardTitle>
-                <div className="text-3xl font-bold">
-                  <span className="text-sm align-top">$</span>50
-                  <span className="text-sm text-muted-foreground">/mo</span>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2 text-sm">
-                  {Array.from({ length: 5 }).map((_, j) => (
-                    <li key={j}>List item</li>
-                  ))}
-                </ul>
-              </CardContent>
-              <CardFooter>
-                <Button className="w-full">Button</Button>
-              </CardFooter>
-            </Card>
-          ))}
-        </div>
+      <section id="pricing" className="container mx-auto px-4 py-24">
+        <PricingSection />
       </section>
 
       {/* Footer */}
-      <footer className="border-t bg-muted/50">
-        <div className="container mx-auto px-4 py-12">
+      <footer className="bg-muted/50 border-t">
+        <div className="container mx-auto px-6 py-12">
           <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+            {/* Contact Info */}
             <div>
-              <h3 className="mb-4 text-sm font-semibold">Use cases</h3>
+              <h3 className="mb-4 text-sm font-semibold">Contact Info</h3>
               <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>UX design</li>
-                <li>UI design</li>
-                <li>Wireframing</li>
-                <li>Diagramming</li>
-                <li>Brainstorming</li>
-                <li>Online whiteboard</li>
-                <li>Team collaboration</li>
+                <li>Email: support@hosp.com</li>
+                <li>Phone: +123 456 7890</li>
+                <li>Address: 123 Healthcare St, City, Country</li>
               </ul>
             </div>
+
+            {/* Main Company */}
             <div>
-              <h3 className="mb-4 text-sm font-semibold">Explore</h3>
+              <h3 className="mb-4 text-sm font-semibold">Main Company</h3>
               <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>Design</li>
-                <li>Prototyping</li>
-                <li>Development features</li>
-                <li>Design systems</li>
-                <li>Collaborative features</li>
-                <li>Design process</li>
-                <li>FigJam</li>
+                <li>About Us</li>
+                <li>Our Services</li>
+                <li>Careers</li>
+                <li>Privacy Policy</li>
               </ul>
             </div>
+
+            {/* Newsletter */}
             <div>
-              <h3 className="mb-4 text-sm font-semibold">Resources</h3>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>Blog</li>
-                <li>Best practices</li>
-                <li>Others</li>
-                <li>Color wheel</li>
-                <li>Support</li>
-                <li>Developers</li>
-                <li>Resource library</li>
-              </ul>
+              <h3 className="mb-4 text-sm font-semibold">Newsletter</h3>
+              <p className="text-sm text-muted-foreground mb-4">
+                Subscribe to our newsletter for the latest updates.
+              </p>
+              <form className="flex flex-col space-y-2">
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  className="px-4 py-2 border rounded"
+                />
+                <button className="bg-blue-600 text-white py-2 rounded">
+                  Subscribe
+                </button>
+              </form>
             </div>
-            <div className="space-y-4">
-              <div className="grid size-6 place-items-center rounded bg-foreground text-background dark:bg-background dark:text-foreground">
-                <div className="size-4 rounded-sm border-2" />
-              </div>
+
+            {/* Social Info */}
+            <div>
+              <h3 className="mb-4 text-sm font-semibold">Follow Us</h3>
               <div className="flex space-x-4">
-                <a href="#" className="text-muted-foreground hover:text-foreground">
+                <Link href="#" passHref>
                   <span className="sr-only">Youtube</span>
                   <Youtube className="size-6" />
-                </a>
-                <a href="#" className="text-muted-foreground hover:text-foreground">
+                </Link>
+                <Link href="#" passHref>
                   <span className="sr-only">Facebook</span>
                   <Facebook className="size-6" />
-                </a>
-                <a href="#" className="text-muted-foreground hover:text-foreground">
+                </Link>
+                <Link href="#" passHref>
                   <span className="sr-only">LinkedIn</span>
                   <Linkedin className="size-6" />
-                </a>
-                <a href="#" className="text-muted-foreground hover:text-foreground">
+                </Link>
+                <Link href="#" passHref>
                   <span className="sr-only">GitHub</span>
                   <Github className="size-6" />
-                </a>
+                </Link>
               </div>
             </div>
           </div>
         </div>
       </footer>
     </div>
-  )
+  );
 }
-
