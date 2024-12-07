@@ -83,20 +83,16 @@ export default function LandingPage() {
 
             {/* Newsletter */}
             <div>
-              <h3 className="mb-4 text-sm font-semibold">Newsletter</h3>
-              <p className="text-sm text-muted-foreground mb-4">
-                Subscribe to our newsletter for the latest updates.
-              </p>
-              <form className="flex flex-col space-y-2">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="px-4 py-2 border rounded"
-                />
-                <button className="bg-blue-600 text-white py-2 rounded">
-                  Subscribe
-                </button>
-              </form>
+              <h3 className="mb-4 text-sm font-semibold">Resources</h3>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li>Blog</li>
+                <li>Best practices</li>
+                <li>Others</li>
+                <li>Color wheel</li>
+                <li>Support</li>
+                <li>Developers</li>
+                <li>Resource library</li>
+              </ul>
             </div>
 
             {/* Social Info */}
