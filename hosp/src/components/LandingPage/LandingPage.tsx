@@ -12,42 +12,7 @@ export default function LandingPage() {
   return (
     <div className="min-h-screen bg-background text-foreground">
 
-      {/* Header
-      <header className="border-b">
-        <nav className="container mx-auto flex h-16 items-center px-4">
-          <div className="flex items-center space-x-6">
-            <div className="grid size-6 place-items-center rounded bg-foreground text-background dark:bg-background dark:text-foreground">
-              <div className="size-4 rounded-sm border-2" />
-            </div>
-            <div className="hidden items-center space-x-6 md:flex">
-              <Link href="#" passHref>
-                <a className="text-sm font-medium">Products</a>
-              </Link>
-              <Link href="#" passHref>
-                <a className="text-sm font-medium">Solutions</a>
-              </Link>
-              <Link href="#" passHref>
-                <a className="text-sm font-medium">Community</a>
-              </Link>
-              <Link href="#" passHref>
-                <a className="text-sm font-medium">Resources</a>
-              </Link>
-              <Link href="#" passHref>
-                <a className="text-sm font-medium">Pricing</a>
-              </Link>
-              <Link href="#" passHref>
-                <a className="text-sm font-medium">Contact</a>
-              </Link>
-            </div>
-          </div>
-          <div className="ml-auto flex items-center space-x-4">
-            <Button variant="ghost" className="text-sm">
-              Sign in
-            </Button>
-            <Button className="text-sm">Register</Button>
-          </div>
-        </nav>
-      </header> */}
+      {/* Header */}
       <section id="navbar" className="">
         <Header/>
 
@@ -67,11 +32,7 @@ export default function LandingPage() {
         <ServicesSection />
       </section>
 
-      {/* Pricing Section */}
-      <section id="pricing">
-        <PricingSection />
-      </section>
-
+      
       {/* Footer */}
       <footer className="bg-muted/50 border-t">
         <div className="container mx-auto px-6 py-12">
