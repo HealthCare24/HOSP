@@ -5,6 +5,8 @@ import PricingSection from "./PricingSection";
 import HeroSection from "./HeroSection";
 import { Button } from "../ui/button";
 import Header from "./Header";
+import OurPromise from "./OurPromise";
+import ServicesSection from "./ServicesSection";
 
 export default function LandingPage() {
   return (
