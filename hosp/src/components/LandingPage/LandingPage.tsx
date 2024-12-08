@@ -4,6 +4,7 @@ import Link from "next/link";
 import PricingSection from "./PricingSection";
 import HeroSection from "./HeroSection";
 import { Button } from "../ui/button";
+import Header from "./Header";
 
 export default function LandingPage() {
   return (
@@ -45,6 +46,10 @@ export default function LandingPage() {
           </div>
         </nav>
       </header> */}
+      <section id="navbar" className="">
+        <Header/>
+
+      </section>
 
       {/* Hero Section */}
       <section id="hero" className="container mx-auto px-4 py-24">
