@@ -3,7 +3,8 @@ import { Facebook, Github, Linkedin, Youtube } from "lucide-react";
 import Link from "next/link";
 import PricingSection from "./PricingSection";
 import HeroSection from "./HeroSection";
-import { Button } from "../ui/button";
+import OurPromise from "./OurPromise";
+import ServicesSection from "./ServicesSection";
 
 export default function LandingPage() {
   return (
@@ -47,12 +48,21 @@ export default function LandingPage() {
       </header> */}
 
       {/* Hero Section */}
-      <section id="hero" className="container mx-auto px-4 py-24">
+      <section id="hero">
         <HeroSection />
       </section>
 
+      <section id="promise">
+        <OurPromise />
+      </section>
+
+      {/* Service Section */}
+      <section id="service">
+        <ServicesSection />
+      </section>
+
       {/* Pricing Section */}
-      <section id="pricing" className="container mx-auto px-4 py-24">
+      <section id="pricing">
         <PricingSection />
       </section>
 
@@ -66,13 +76,13 @@ export default function LandingPage() {
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li>Email: support@hosp.com</li>
                 <li>Phone: +123 456 7890</li>
-                <li>Address: 123 Healthcare St, City, Country</li>
+                <li>Address: Bengaluru</li>
               </ul>
             </div>
 
             {/* Main Company */}
             <div>
-              <h3 className="mb-4 text-sm font-semibold">Main Company</h3>
+              <h3 className="mb-4 text-sm font-semibold">HOSP</h3>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li>About Us</li>
                 <li>Our Services</li>
