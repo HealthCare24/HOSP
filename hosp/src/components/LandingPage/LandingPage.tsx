@@ -3,8 +3,8 @@ import { Facebook, Github, Linkedin, Youtube } from "lucide-react";
 import Link from "next/link";
 import PricingSection from "./PricingSection";
 import HeroSection from "./HeroSection";
-import OurPromise from "./OurPromise";
-import ServicesSection from "./ServicesSection";
+import { Button } from "../ui/button";
+import Header from "./Header";
 
 export default function LandingPage() {
   return (
@@ -46,6 +46,10 @@ export default function LandingPage() {
           </div>
         </nav>
       </header> */}
+      <section id="navbar" className="">
+        <Header/>
+
+      </section>
 
       {/* Hero Section */}
       <section id="hero">
