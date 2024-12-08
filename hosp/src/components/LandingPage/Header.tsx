@@ -1,36 +1,50 @@
-'use client'
+'use client';
 
-import React from 'react'
-import Link from 'next/link'
-import Image from 'next/image'
-import { Button } from "@/components/ui/button"
+import React, { useEffect, useState } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import { Button } from "@/components/ui/button";
 import { 
   NavigationMenu,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
   navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu"
-import { MoonIcon, SunIcon } from 'lucide-react'
-import { useTheme } from 'next-themes'
+} from "@/components/ui/navigation-menu";
+import { MoonIcon, SunIcon } from 'lucide-react';
+import { useTheme } from 'next-themes';
+import { useRouter } from 'next/navigation'; // Updated to use `next/navigation`
 
 const Header = () => {
-  const { theme, setTheme } = useTheme()
+  const { theme, setTheme } = useTheme();
+  const router = useRouter();
+  const [mounted, setMounted] = useState(false);
+
+  // Ensure that the component is mounted on the client side
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // Handle theme toggle safely
+  const toggleTheme = () => {
+    if (mounted) {
+      setTheme(theme === 'dark' ? 'light' : 'dark');
+    }
+  };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b bg-white/80 backdrop-blur-sm ">
       <nav className="container mx-auto flex h-16 items-center px-4">
         <div className="flex items-center space-x-4">
           <Link href="/" className="flex items-center space-x-2">
-            <img
-              src="HOSP-logo.png"
+            <Image
+              src="/HOSP-logo.png"
               alt="Company Logo"
               width={40}
               height={40}
-              className="rounded-md size-16"
+              className="rounded-md"
             />
             <div className="flex items-center space-x-2">
-              
               <span className="text-xl font-bold text-black">HOSP</span>
             </div>
           </Link>
@@ -92,18 +106,17 @@ const Header = () => {
           <Button 
             variant="ghost" 
             size="icon"
-            onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+            onClick={toggleTheme}
           >
             {theme === 'dark' ? <SunIcon className="h-5 w-5" /> : <MoonIcon className="h-5 w-5" />}
             <span className="sr-only">Toggle theme</span>
           </Button>
-          <Button variant="outline">Sign in</Button>
-          <Button>Register</Button>
+          <Button variant="outline" onClick={() => router.push('/signin')}>Sign in</Button>
+          <Button onClick={() => router.push('/register')}>Register</Button>
         </div>
       </nav>
     </header>
-  )
-}
+  );
+};
 
-export default Header
-
+export default Header;
