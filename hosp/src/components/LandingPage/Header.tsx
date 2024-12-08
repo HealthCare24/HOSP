@@ -18,7 +18,7 @@ const Header = () => {
   const { theme, setTheme } = useTheme()
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 border-b bg-white/80 backdrop-blur-sm">
+    <header className="fixed top-0 left-0 right-0 z-50 border-b bg-white/80 backdrop-blur-sm ">
       <nav className="container mx-auto flex h-16 items-center px-4">
         <div className="flex items-center space-x-4">
           <Link href="/" className="flex items-center space-x-2">

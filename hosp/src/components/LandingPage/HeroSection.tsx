@@ -5,7 +5,7 @@ import { ArrowRight } from 'lucide-react'
 const HeroSection: React.FC = () => {
   return (
     <section className="bg-white">
-      <div className="container mx-auto px-6 py-2">
+      <div className="container mx-auto px-6 pt-32">
         <div className="grid gap-12 lg:grid-cols-2 items-center">
           <div className="space-y-6">
             <h1 className="text-4xl font-bold leading-tight text-gray-900">
