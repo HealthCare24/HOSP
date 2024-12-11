@@ -7,6 +7,7 @@ import { Button } from "../ui/button";
 import Header from "./Header";
 import OurPromise from "./OurPromise";
 import ServicesSection from "./ServicesSection";
+import Pharmacy from "./pharmacy-product-section"
 
 export default function LandingPage() {
   return (
@@ -32,6 +33,11 @@ export default function LandingPage() {
         <ServicesSection />
       </section>
 
+      {/* Service Section */}
+      <section id="pharma">
+        <Pharmacy />
+      </section>
+
       
       {/* Footer */}
       <footer className="bg-muted/50 border-t">
@@ -46,7 +52,7 @@ export default function LandingPage() {
                 <li>Address: Bengaluru</li>
               </ul>
             </div>
-
+    
             {/* Main Company */}
             <div>
               <h3 className="mb-4 text-sm font-semibold">HOSP</h3>
