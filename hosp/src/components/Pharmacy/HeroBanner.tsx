@@ -20,7 +20,7 @@ export default function HeroBanner() {
         </div>
       </div>
       <div className="absolute bottom-0 left-0 right-0 bg-primary text-white py-2 text-center">
-        Free shipping on orders over $50 | 20% off all vitamins
+        Free shipping on orders over &#8377;50 | 20% off all vitamins
       </div>
     </div>
   )
