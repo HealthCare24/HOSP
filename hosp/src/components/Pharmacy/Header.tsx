@@ -2,33 +2,44 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { ShoppingCart, Search, User, Phone } from 'lucide-react'
+import { ShoppingCart, Search, User, Phone, Menu } from 'lucide-react'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
-import LandingPage from '../LandingPage/LandingPage'
 
-export default function Header() {
+interface HeaderProps {
+  onSidebarToggle: () => void;
+  sidebarOpen: boolean;
+}
+
+export default function Header({ onSidebarToggle, sidebarOpen }: HeaderProps) {
   const [searchQuery, setSearchQuery] = useState('')
 
   return (
     <header className="bg-white shadow-md sticky top-0 z-50">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between mb-4">
-          <Link href="/" className="text-2xl font-bold text-primary">
-            HOSP
-          </Link>
+          <div className="flex items-center">
+            <Button variant="ghost" size="icon" onClick={onSidebarToggle} className="mr-2">
+              <Menu className="h-6 w-6" />
+            </Button>
+            <Link href="/pharmacy" className="text-2xl font-bold text-primary">
+              HOSP
+            </Link>
+          </div>
           <div className="flex items-center space-x-4">
-            <Phone className="text-gray-600" />
-            <span className="text-sm">1-800-PHARMA</span>
-            <Button variant="outline">Live Chat</Button>
+            <Phone className="text-gray-600 hidden md:block" />
+            <span className="text-sm hidden md:block">1-800-HOSP</span>
+            <Button variant="outline" className="hidden md:block">Live Chat</Button>
           </div>
         </div>
         <div className="flex items-center justify-between">
           <nav className="hidden md:flex space-x-4">
             <Link href="/pharmacy" className="text-sm font-medium hover:text-primary">Home</Link>
             <Link href="/pharmacy/products" className="text-sm font-medium hover:text-primary">Products</Link>
+            <Link href="/pharmacy/about" className="text-sm font-medium hover:text-primary">About Us</Link>
+            <Link href="/pharmacy/blog" className="text-sm font-medium hover:text-primary">Blog</Link>
             <Link href="/pharmacy/contact" className="text-sm font-medium hover:text-primary">Contact</Link>
-            
+            <Link href="/pharmacy/faq" className="text-sm font-medium hover:text-primary">FAQ</Link>
           </nav>
           <div className="flex-1 mx-4">
             <form onSubmit={(e) => { e.preventDefault(); console.log('Search:', searchQuery) }}>
