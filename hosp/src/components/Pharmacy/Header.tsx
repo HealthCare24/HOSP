@@ -22,7 +22,7 @@ export default function Header({ onSidebarToggle, sidebarOpen }: HeaderProps) {
             <Button variant="ghost" size="icon" onClick={onSidebarToggle} className="mr-2">
               <Menu className="h-6 w-6" />
             </Button>
-            <Link href="/pharmacy" className="text-2xl font-bold text-primary">
+            <Link href="/" className="text-2xl font-bold text-primary">
               HOSP
             </Link>
           </div>
@@ -36,8 +36,6 @@ export default function Header({ onSidebarToggle, sidebarOpen }: HeaderProps) {
           <nav className="hidden md:flex space-x-4">
             <Link href="/pharmacy" className="text-sm font-medium hover:text-primary">Home</Link>
             <Link href="/pharmacy/products" className="text-sm font-medium hover:text-primary">Products</Link>
-            <Link href="/pharmacy/about" className="text-sm font-medium hover:text-primary">About Us</Link>
-            <Link href="/pharmacy/blog" className="text-sm font-medium hover:text-primary">Blog</Link>
             <Link href="/pharmacy/contact" className="text-sm font-medium hover:text-primary">Contact</Link>
             <Link href="/pharmacy/faq" className="text-sm font-medium hover:text-primary">FAQ</Link>
           </nav>
