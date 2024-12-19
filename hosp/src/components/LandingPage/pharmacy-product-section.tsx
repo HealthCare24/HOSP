@@ -10,6 +10,8 @@ interface Feature {
   icon: React.ReactNode
 }
 
+
+
 const features: Feature[] = [
   {
     name: "24/7 Service",
@@ -34,7 +36,7 @@ const features: Feature[] = [
 ]
 
 export default function PharmacyFeaturesSection() {
-  
+     
   return (
     <section className="py-12 bg-gray-50">
       <div className="container mx-auto px-4">
@@ -53,10 +55,9 @@ export default function PharmacyFeaturesSection() {
           ))}
         </div>
         <div className="mt-10 text-center">
-        <Button  asChild className="bg-emerald-600 hover:bg-emerald-700 text-white"
->
-  <Link href="/pharmacy">Shop Our Products</Link>
-</Button>
+        <Button  asChild className="bg-emerald-600 hover:bg-emerald-700 text-white">  
+            <Link href="/signin">Shop Our Products</Link>
+        </Button>
  
         </div>
       </div>
