@@ -6,10 +6,39 @@ import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { FaGoogle, FaApple } from 'react-icons/fa'
 import Link from 'next/link'
+import {useState,FormEvent} from 'react'
+import axios from "axios"
 
 export default function LoginPage() {
+  const [user,setUser]=useState({
+    email:'',
+    password:''
+  });
+
+  function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
+    const { id, value } = e.target; 
+    setUser(prev => ({ ...prev, [id]: value }));
+  }
+
+  async function handleSubmit(e:FormEvent){
+    e.preventDefault();
+    const request= await axios.post('/api/login',{
+      email:user.email,
+      password:user.password
+    })
+
+    if (request.status === 200) {
+      alert('Logged in');
+    }
+  }
+
+
+
+
+
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-white">
+      <form onSubmit={handleSubmit}>
       <Card className="w-[350px]">
         <CardHeader>
           <CardTitle>Login</CardTitle>
@@ -18,13 +47,13 @@ export default function LoginPage() {
         <CardContent className="space-y-4">
           <div className="space-y-2">
             <Label htmlFor="email">Email</Label>
-            <Input id="email" type="email" placeholder="m@example.com" />
+            <Input id="email" type="email" placeholder="m@example.com" value={user.email} onChange={handleChange}/>
           </div>
           <div className="space-y-2">
             <Label htmlFor="password">Password</Label>
-            <Input id="password" type="password" />
+            <Input id="password" type="password" value={user.password} onChange={handleChange}/>
           </div>
-          <Button className="w-full">Login</Button>
+          <Button className="w-full" type='submit'>Login</Button>
           <div className="relative">
             <div className="absolute inset-0 flex items-center">
               <span className="w-full border-t" />
@@ -44,13 +73,14 @@ export default function LoginPage() {
         </CardContent>
         <CardFooter className="flex flex-col space-y-2">
           <p className="text-sm text-center w-full">
-            Don't have an account? <Link href="/register" className="underline">Sign up</Link>
+            Dont have an account? <Link href="/register" className="underline">Sign up</Link>
           </p>
           <Button variant="link" asChild>
             <Link href="/">Back to Home</Link>
           </Button>
         </CardFooter>
       </Card>
+      </form>
     </div>
   )
 }
