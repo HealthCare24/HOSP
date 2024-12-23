@@ -56,7 +56,7 @@ export default function PharmacyFeaturesSection() {
         </div>
         <div className="mt-10 text-center">
         <Button  asChild className="bg-emerald-600 hover:bg-emerald-700 text-white">  
-            <Link href="/signin">Shop Our Products</Link>
+            <Link href="/user/login">Shop Our Products</Link>
         </Button>
  
         </div>
