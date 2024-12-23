@@ -111,8 +111,8 @@ const Header = () => {
             {theme === 'dark' ? <SunIcon className="h-5 w-5" /> : <MoonIcon className="h-5 w-5" />}
             <span className="sr-only">Toggle theme</span>
           </Button>
-          <Button variant="outline" onClick={() => router.push('/signin')}>Sign in</Button>
-          <Button onClick={() => router.push('/register')}>Register</Button>
+          <Button variant="outline" onClick={() => router.push('/user/login')}>Sign in</Button>
+          <Button onClick={() => router.push('/user/register')}>Register</Button>
         </div>
       </nav>
     </header>
