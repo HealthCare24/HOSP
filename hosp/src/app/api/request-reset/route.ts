@@ -31,8 +31,8 @@ export async function POST(req:NextRequest){
     auth: {
       type: 'OAuth2',
       user: EMAIL_FROM, // Replace with the sender email
-      clientId: '847351283132-271fr89mb4e5p21dl6cs8c880a37tjkj.apps.googleusercontent.com',
-      clientSecret: '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',
+      clientId: ,
+      clientSecret: ,
       refreshToken: '<YOUR_REFRESH_TOKEN>',
       accessToken: '<YOUR_ACCESS_TOKEN>', // Optional, if you have a valid access token
     },
