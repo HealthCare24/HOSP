@@ -46,12 +46,12 @@ export default function LoginPage() {
       alert('Login failed. Please check your credentials.');
     }
   }
-
+    
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-white">
       <form onSubmit={handleSubmit}>
         <Card className="w-[350px]">
-          <CardHeader>
+          <CardHeader>  
             <CardTitle>Login</CardTitle>
             <CardDescription>Choose your preferred login method</CardDescription>
           </CardHeader>
