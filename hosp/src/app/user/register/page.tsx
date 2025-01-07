@@ -28,7 +28,7 @@ export default function SignupPage() {
         if(user.password!==user.confirmPassword){
             alert("Passwords do not match");
         }
-        const request = await axios.post('/api/register',{
+        const request = await axios.post('/api/v1/register',{
             name:user.name,
             email:user.email,
             password:user.password

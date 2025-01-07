@@ -14,10 +14,6 @@ import { useRouter } from "next/navigation";
 export default function LoginPage() {
   const router = typeof window !== 'undefined' ? useRouter() : null;
 
-  if (!router) {
-    return null; // Or a fallback UI
-  }
-
   const [user, setUser] = useState({
     email: '',
     password: '',
@@ -32,14 +28,14 @@ export default function LoginPage() {
     e.preventDefault();
 
     try {
-      const request = await axios.post('/api/login', {
+      const request = await axios.post('/api/v1/login', {
         email: user.email,
         password: user.password,
       });
 
       if (request.status === 200) {
         alert('Logged in');
-        router.push('/pharmacy'); // Redirect to /pharmacy
+        router!.push('/pharmacy');
       }
     } catch (error) {
       console.error('Login failed', error);
